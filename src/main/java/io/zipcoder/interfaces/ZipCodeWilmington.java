@@ -20,7 +20,6 @@ public class ZipCodeWilmington {
     }
 
     public void hostLecture(long id, double numberOfHours) {
-        instructors.findById(id);
         Person teach = instructors.findById(id);
         hostLecture((Teacher)teach, numberOfHours);
     }
