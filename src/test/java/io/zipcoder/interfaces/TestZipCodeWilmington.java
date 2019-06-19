@@ -33,5 +33,27 @@ public class TestZipCodeWilmington {
 
     }
 
+    @Test
+
+    public void testHostLecture2() {
+        ZipCodeWilmington testZPW = getZPW();
+        Instructors testTeach = Instructors.getINSTANCE();
+
+       Teacher test =(Teacher) testTeach.findById(2L);
+
+        testZPW.hostLecture(test,8.0);
+
+        Map<Student, Double> testMap = testZPW.getStudyMap();
+
+        Students students = Students.getInstance();
+
+        Student student7 = (Student)students.findById(7L);
+
+        Double actual = testMap.get(student7);
+
+        Assert.assertEquals(2.0,actual,0);
+
+
+    }
 
 }
