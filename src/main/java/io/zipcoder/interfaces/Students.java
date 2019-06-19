@@ -1,6 +1,6 @@
 package io.zipcoder.interfaces;
 
-public final class Students extends People {
+public final class Students extends People<Student> {
     private final static Students Instance = new Students();
 
     private Students (){
@@ -12,5 +12,10 @@ public final class Students extends People {
 
     public static Students getInstance() {
         return Instance;
+    }
+
+    @Override
+    public Student[] getArray() {
+        return personList.toArray(new Student[personList.size()]);
     }
 }

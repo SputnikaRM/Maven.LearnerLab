@@ -9,23 +9,20 @@ public class TestPeople {
 
     @Test
     public void testAdd() {
-        Instructor instructor = new Instructor(1L, "Smith");
-        Student student = new Student(101L, "John");
+        Instructor instructor = new Instructor(100L, "Smith");
 
-        People people = new People();
+        People people = Instructors.getINSTANCE();
         people.add(instructor);
-        people.add(student);
 
         Assert.assertTrue(people.contains(instructor));
-        Assert.assertTrue(people.contains(student));
     }
 
     @Test
     public void findById() {
-        Long id = 1L;
-        Instructor expected = new Instructor(id, "Smith");
+        Long id = 200L;
+        Instructor expected = new Instructor(id, "John");
 
-        People people = new People();
+        People people = Instructors.getINSTANCE();
         people.add(expected);
 
         Assert.assertEquals(expected, people.findById(id));
@@ -35,7 +32,7 @@ public class TestPeople {
     public void testRemove() {
         Instructor instructor = new Instructor(1L, "Smith");
 
-        People people = new People();
+        People people = Instructors.getINSTANCE();
         people.add(instructor);
         people.remove(instructor);
 
