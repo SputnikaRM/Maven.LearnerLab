@@ -29,7 +29,7 @@ public class TestZipCodeWilmington {
 
        Double actual = testMap.get(student7);
 
-        Assert.assertEquals(1.0,(double)actual);
+        Assert.assertEquals(1.0, actual,0);
 
     }
 
