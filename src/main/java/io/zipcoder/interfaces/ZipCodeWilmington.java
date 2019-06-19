@@ -1,5 +1,8 @@
 package io.zipcoder.interfaces;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ZipCodeWilmington {
     Students students= Students.getInstance();
     Instructors instructors=Instructors.getINSTANCE();
@@ -22,11 +25,21 @@ public class ZipCodeWilmington {
     public void hostLecture (long id, double numberOfHours){
         instructors.findById(id);
         Person teach = instructors.findById(id);
-        
+
 
 
     }
 
+    public Map<Student, Double> getStudyMap () {
+        HashMap<Student,Double> map = new HashMap<>();
+
+        for(Object student: students){
+            Student x=(Student) student;
+            map.put(x,x.getTotalStudyTime());
+        }
+        return map;
+
+    }
 
 
 
