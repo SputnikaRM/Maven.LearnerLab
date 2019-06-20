@@ -6,19 +6,21 @@ public enum Educator implements Teacher{
     FROILAN(new Instructor(3L,"Froilan")),
     MELANIE(new Instructor(4L,"Melanie"));
     final Instructor instructor;
+    Double timeWorked = 0.0;
 
     Educator(Instructor instructor){
         this.instructor = instructor;
-        Instructors.getINSTANCE().add(instructor);
     }
 
     @Override
     public void teach(Learner learner, Double numberOfHours) {
-
+        this.instructor.teach(learner,numberOfHours);
+        this.timeWorked+=numberOfHours;
     }
 
     @Override
     public void lecture(Learner[] learners, Double numberOfHours) {
-
+        this.instructor.lecture(learners,numberOfHours);
+        this.timeWorked+=numberOfHours;
     }
 }

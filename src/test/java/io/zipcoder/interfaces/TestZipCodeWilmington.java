@@ -9,14 +9,13 @@ import static io.zipcoder.interfaces.ZipCodeWilmington.getZPW;
 public class TestZipCodeWilmington {
 
     @Test
-
     public void testHostLecture (){
         //given
 
 
        ZipCodeWilmington testzipCodeWilmington = getZPW();
 
-       testzipCodeWilmington.hostLecture(1L,4.0);
+       testzipCodeWilmington.hostLecture(Educator.KRIS,4.0);
 
        Map<Student, Double> testMap = testzipCodeWilmington.getStudyMap();
 
